@@ -16,7 +16,9 @@
   margin-right: 0.5rem;
   width: 80px;
   height: 80px;
-}.BadgesList ul>li {
+}
+
+.BadgesList ul>li {
   margin-bottom: 1rem;
 }
 
@@ -26,6 +28,7 @@
   border-radius: 5px;
   display: flex;
   padding: 1rem;
+  margin: 10px 0px;
 }
 
 .BadgesListItem__avatar {
@@ -34,4 +37,8 @@
   margin-right: 0.5rem;
   width: 80px;
   height: 80px;
+}
+
+.Twitter__name{
+  color: blue;
 }
