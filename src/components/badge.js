@@ -1,8 +1,6 @@
 import React from 'react';
-
-import 'bootstrap/dist/css/bootstrap.css'
+ 
 import './styles/Badge.css';
-import './styles/Global.css';
 import confLogo from '../images/badge-header.svg';
 
 

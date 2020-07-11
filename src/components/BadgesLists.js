@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './styles/BadgesList.css';
-import 'font-awesome/css/font-awesome.min.css';
 
 class BadgesList extends React.Component{
 	render(){

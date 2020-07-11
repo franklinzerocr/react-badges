@@ -28,3 +28,15 @@
   justify-content: flex-end;
   margin-bottom: 1rem;
 }
+
+.white{
+  color:white;
+}
+
+img{
+  max-width: 100%;
+}
+
+.home_hero{
+  height: 56vw;
+}

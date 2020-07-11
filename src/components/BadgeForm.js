@@ -1,15 +1,7 @@
 import React from 'react';
 
 class BadgeForm extends React.Component{
-
-	state={/*
-		firstName: "",
-		lastName: "",
-		email: "",
-		jobTitle: "",
-		twitter: ""
-	*/}; 
-
+  
 	handleClick = e => {
 		console.log("button was clicked");
 	};
@@ -20,7 +12,7 @@ class BadgeForm extends React.Component{
 	};
 
 	render(){
-		return	<div>
+		return	<React.Fragment>
 					<h1>New attendant</h1>
 					<form onSubmit={this.handleSubmit}>
 						<div className="form-group">
@@ -45,7 +37,7 @@ class BadgeForm extends React.Component{
 						</div>
 						<button onClick={this.handleClick} className="btn btn-primary">Save</button>
 					</form>
-				</div>
+				</React.Fragment>
 				;
 	};
 }
