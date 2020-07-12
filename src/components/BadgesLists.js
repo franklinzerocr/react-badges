@@ -17,18 +17,20 @@ class BadgesList extends React.Component{
 		return 	<ul className="list-unstyled BadgesList">
 					{this.props.badges.map((badge)=>{
 					   return(
-					      <li key={badge.id} className="BadgesListItem">
-					         <Gravatar className="BadgesListItem__avatar" email={badge.email}/>
-					         <div>
-					            <div><strong>{badge.firstName} {badge.lastName}</strong></div>
-					            <div className="Twitter__name">
-					               <a href={"https://twitter.com/"+badge.twitter}>
-					               		<i className="fa fa-twitter"></i>@{badge.twitter}
-					               	</a>
-					            </div>
-					            <div>{badge.jobTitle}</div>
-					         </div>
-					      </li>
+					   		<Link key={badge.id} to={'/badges/'+badge.id+'/edit'} className="text-reset text-decoration-none">
+								<li  className="BadgesListItem">
+								 <Gravatar className="BadgesListItem__avatar" email={badge.email}/>
+								 <div>
+								    <div><strong>{badge.firstName} {badge.lastName}</strong></div>
+								    <div className="Twitter__name">
+								       <a href={"https://twitter.com/"+badge.twitter}>
+								       		<i className="fa fa-twitter"></i>@{badge.twitter}
+								       	</a>
+								    </div>
+								    <div>{badge.jobTitle}</div>
+								 </div>
+								</li>
+							</Link>
 					   )
 					})}
 				</ul> 

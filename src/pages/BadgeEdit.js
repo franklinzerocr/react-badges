@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './styles/BadgeNew.css';
+import './styles/BadgeEdit.css';
 
 import header from '../images/platziconf-logo.svg';
 
@@ -10,7 +10,7 @@ import PageLoading from '../components/PageLoading';
 
 import API from '../api';
 
-class BadgeNew extends React.Component{
+class BadgeEdit extends React.Component{
 
 	state = {
 		loading: false,
@@ -23,6 +23,21 @@ class BadgeNew extends React.Component{
 			twitter: ""
 		} 	
 	};
+
+	componentDidMount(){
+		this.fetchData();
+	};
+
+	async fetchData(e){
+		this.setState({loading: true, error:null})
+		try{
+			const data= await API.badges.read(this.props.match.params.badgeId)
+			this.setState({loading:false,form: data})
+			// this.props.history.push('/badges');
+		}catch(error){
+			this.setState({loading:false,error})
+		}
+	}
 
 	handleChange = e => {
 		this.setState({
@@ -38,7 +53,7 @@ class BadgeNew extends React.Component{
 		this.setState({loading : true, error: null })
 
 		try{
-			await API.badges.create(this.state.form)
+			await API.badges.update(this.props.match.params.badgeId,this.state.form)
 			this.setState({loading : false, error: null })
 			this.props.history.push('/badges');
 		}catch(error){
@@ -52,7 +67,7 @@ class BadgeNew extends React.Component{
 			return <PageLoading />
 		}
 		return	<React.Fragment> 
-					<div className="BadgeNew__hero my-auto text-center">
+					<div className="BadgeEdit__hero my-auto text-center">
 						<img className="img-fluid badge_hero-image" src={header} alt="header"/>
 					</div>
 					<div className="container">
@@ -74,7 +89,7 @@ class BadgeNew extends React.Component{
 									onChange={this.handleChange} 
 									formValues={this.state.form}
 									error={this.state.error}  
-									title="New"
+									title="Edit"
 								/>
 							</div>
 						</div>
@@ -84,4 +99,4 @@ class BadgeNew extends React.Component{
 	}
 }
 
-export default BadgeNew;
+export default BadgeEdit;

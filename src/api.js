@@ -24,7 +24,6 @@ async function callApi(endpoint, options = {}) {
 const api = {
   badges: {
     list() {
-      // throw new Error('Error F!');
       return callApi('/badges');
     },
     create(badge) {
@@ -34,6 +33,7 @@ const api = {
       });
     },
     read(badgeId) {
+      // throw new Error('Error F!');
       return callApi(`/badges/${badgeId}`);
     },
     update(badgeId, updates) {
